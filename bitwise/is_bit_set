@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int is_bit_set(int reg, int n)
+{
+    return (reg >> n) & 1 ;
+}
+
+int main()
+{
+    int reg = 0b10110100;
+    
+    printf("%d\n", is_bit_set(reg, 2));
+    printf("%d\n", is_bit_set(reg, 1));
+}
