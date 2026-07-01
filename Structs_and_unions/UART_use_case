@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdint.h>
+
+struct conreg
+{
+    uint8_t enable     : 1;
+    uint8_t parity     : 2;
+    uint8_t stop_bits  : 2;
+    uint8_t reserved   : 3;
+};
+
+int main()
+{
+    struct conreg original;
+    
+    original.enable = 1;
+    original.parity = 2;
+    original.stop_bits = 1;
+    
+    printf("enable = %d\n",original.enable);
+    printf("parity = %d\n",original.parity);
+    printf("stop_bits = %d\n",original.stop_bits);
+    printf("size of the struct = %d\n",sizeof(struct conreg));
+    
+    return 0;
+}
