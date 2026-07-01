@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdint.h>
+
+int main()
+{
+    union reg {
+        uint32_t value;
+        uint8_t  bytes[4];
+    } r;
+
+    r.value = 0x12345678;
+
+    printf("Full value : %x\n",  r.value);
+    printf("byte 0 : %x\n", r.bytes[0]);
+    printf("byte 1 : %x\n", r.bytes[1]);
+    printf("byte 2 : %x\n", r.bytes[2]);
+    printf("byte 3 : %x\n", r.bytes[3]);
+
+    return 0;
+}
